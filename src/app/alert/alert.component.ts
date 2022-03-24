@@ -6,5 +6,19 @@ import { Component } from "@angular/core";
 })
 
 export class AlertComponent{
-    
+    username = "Steve+";
+    resetUsername: boolean = false;
+
+    isUsernameEmpty(){
+        if (this.username == "") return true;
+    }
+
+    onUpdateUsername(event: Event){
+        this.username = (<HTMLInputElement>event.target).value;
+    }
+
+    onResetName(){
+        this.username = "";
+    }
+
 }
